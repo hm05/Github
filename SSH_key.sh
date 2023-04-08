@@ -1,32 +1,30 @@
 #!/bin/bash
+
 echo "--------------Getting you connected to GitHub------------"
 
 cd ~/Downloads
-mkdir key
-while (true)
+mkdir -p key
+while true; do
   echo "Enter your username: "
-  git --global user.name
+  read user_name
+  git config --global user.name "$user_name"
+
   echo "Enter your email: "
   read user_email
-  git --global user.email
-  $user_email
+  git config --global user.email "$user_email"
 
   echo "Please check your details" 
   git config --list
+
   echo "Press y to continue or n to edit: "
   read choice
-  if (choice == y || choice == Y)
-  then
+  if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
     echo "Please set a passphrase for your SSH Key"
-    passphrase = 1972
-    ssh-keygen -t ed25519 -C $user_email
-    ~/Downloads/key/
-    $passphrase
-    $passphrase
-    cd ~/Downloads/key/
-    cat ~/Downloads/key/id_ed25519
+    ssh-keygen -t ed25519 -C "$user_email" -f ~/Downloads/key/id_ed25519
+    cat ~/Downloads/key/id_ed25519.pub
     break
   fi
+done
 
   # 945  touch key.txt
   # 946  git --global user.name
