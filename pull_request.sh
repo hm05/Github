@@ -1,6 +1,7 @@
 #!/bin/bash
+
 echo "----------Starting Pull Request----------"
-echo "Please enter the path of the directory: "
+echo "Directory path: "
 read path
 echo "Branch name: "
 read branch
@@ -8,6 +9,7 @@ echo "Message: "
 read message
 
 cd $path
+git pull upstream main
 git checkout -b $branch
 git add .
 git commit -m " $message "
