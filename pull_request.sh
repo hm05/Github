@@ -1,4 +1,5 @@
 #!/bin/bash
+source SSH_key.sh
 
 echo "----------Starting Pull Request----------"
 echo "Directory path: "
@@ -15,6 +16,7 @@ git add .
 git commit -m " $message "
 git rebase main
 git push -u origin $branch
+$passphrase
 
 # cd community-website
 # git checkout -b <your_branch_name>

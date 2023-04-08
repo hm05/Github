@@ -18,7 +18,7 @@ while (true)
   if (choice == y || choice == Y)
   then
     echo "Please set a passphrase for your SSH Key"
-    read passphrase
+    passphrase = 1972
     ssh-keygen -t ed25519 -C $user_email
     ~/Downloads/key/
     $passphrase
