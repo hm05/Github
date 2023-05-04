@@ -50,4 +50,4 @@ At the end of the execution of this script it will ask you for passphrase. So pl
 
 ## Other things
 
-This repository is just made by me (Harsh Murjani) so please feel free to raise an issue or 
+This repository is just made by me (Harsh Murjani) so please feel free to raise an issue or suggestion regarding this repository. 
